@@ -41,7 +41,7 @@ Then add an optional caption and press **Enter** or click **✔**
 1. Install [Fabric Loader](https://fabricmc.net/use/) for Minecraft **1.21.1**
 2. Install [Fabric API](https://modrinth.com/mod/fabric-api)
 3. Install [Kotlin for Fabric](https://modrinth.com/mod/fabric-language-kotlin)
-4. Drop `chatimage_Err.jar` into your `.minecraft/mods/` folder
+4. Drop `chatimage.jar` into your `.minecraft/mods/` folder
 
 ### Server (required for photo sending)
 1. Same steps as above — install the mod on the server too
