@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "chatimage",
+  "version": "${version}",
+  "name": "ChatImage",
+  "description": "Send images in Minecraft chat. Both players need the mod.",
+  "authors": ["Errnick_"],
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.errnicraft.chatimage.ChatImageMod"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.errnicraft.chatimage.ChatImageClient"
+      }
+    ]
+  },
+  "mixins": [
+    "chatimage.client.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.13.0+kotlin.2.3.20",
+    "minecraft": "~1.21.11"
+  }
+}

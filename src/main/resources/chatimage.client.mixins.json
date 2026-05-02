@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.errnicraft.chatimage.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ChatScreenMixin",
+    "ChatComponentMixin",
+    "ScreenAccessor",
+    "ChatComponentAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
