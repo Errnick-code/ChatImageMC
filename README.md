@@ -1,67 +1,90 @@
-# ChatImage — Send photos in Minecraft chat
+# Chat Media — Media in Minecraft chat
 
-> **Send and view images directly in Minecraft chat.**  
-> No commands, no special codes — just drag & drop or paste from clipboard.
-
----
-
-## ✨ Features
-
-- 📷 **Send photos** via drag & drop, file picker or `Ctrl+V` from clipboard
-- 🖼 **View images** inline in chat — click to open full screen
-- ⚡ **Instant placeholder** appears immediately, photo loads in background
-- 🔒 **Server-side moderation** — operators can ban players from sending photos or delete any image
-- 🕐 **Cooldown system** — configurable delay between photo sends
-- 📐 **Scalable previews** — adjust chat photo size in Chat Settings (50%–200%)
-- 🗂 **Supported formats** — PNG, JPEG, WebP, BMP, TIFF
+> **Send media in chat as easily as messages.**  
+> No commands, no setup, no learning. Just chat.
 
 ---
 
-## 🚀 How to use
+## ⚡ Features
 
-### Sending a photo
+- 🖼 Chat media (instant inline rendering)  
+- ⚡ Instant load + placeholder  
+- 🔍 Fullscreen viewer  
+- 📐 Adjustable media size in chat settings (50%–200%)  
+- 🕐 Upload cooldown system  
+- 🔒 Server moderation (ban / delete media)  
+- 🗂 PNG, JPEG, WebP, BMP, TIFF support (GIF coming soon)
 
-Choose any method you prefer:
+---
 
-- 🖱 **Drag & drop** — drag an image file directly into the chat window
-- 📁 **File picker** — click the **📷 button** in the bottom-right corner of chat
-- 📋 **Clipboard** — press **`Ctrl+V`** to paste a copied image
+## 📷 Send media instantly
 
-Then add an optional caption and press **Enter** or click **✔**
+- 🖱 Drag & drop into chat  
+- 📁 Click to open file picker  
+- 📋 Paste with `Ctrl+V`  
 
-### Viewing a photo
-- **Left-click** on any photo in chat to open the full-screen viewer
-- **Right-click** to copy the image ID (for admin deletion)
+---
+
+## 🖼 In-game experience
+
+### Chat media
+Media appears directly inside chat with smooth loading and fullscreen view.
+
+![Inline chat media](https://cdn.modrinth.com/data/cached_images/0fb5dc2fa61a6a6263a6c15ce1f278296b2ed2a3_0.webp)
+
+---
+
+### Before sending
+Preview your media above the chat input before sending.
+
+![Pre-send media preview](https://cdn.modrinth.com/data/cached_images/94d006e63432fb046838ba7e33d4662f90055418_0.webp)
+
+---
+
+## 📋 Requirements
+
+- Fabric Loader **0.18.6+**
+- Fabric API
+- Kotlin for Fabric  
 
 ---
 
 ## 🛠 Installation
 
 ### Client (required)
-1. Install [Fabric Loader](https://fabricmc.net/use/) for Minecraft **1.21.1**
+1. Install [Fabric Loader](https://fabricmc.net/use/)
 2. Install [Fabric API](https://modrinth.com/mod/fabric-api)
 3. Install [Kotlin for Fabric](https://modrinth.com/mod/fabric-language-kotlin)
-4. Drop `chatimage.jar` into your `.minecraft/mods/` folder
+4. Place `chatmedia.jar` into `.minecraft/mods/`  
 
-### Server (required for photo sending)
-1. Same steps as above — install the mod on the server too
-2. Open **TCP port** (default `5050`) in your firewall — this port is used to transfer images
-3. Port and other settings are in `config/chatimage-server.json` (auto-created on first launch)
+---
 
-> ⚠️ Without the server-side mod, players can still **see** photos sent by others but **cannot send** new ones.
+### Server (required for sending media)
+1. Install mod on server  
+2. Open TCP port **5050**  
+3. Configure `config/chatmedia-server.json`  
+
+> ⚠️ Without server mod: players can't send and view media
+
+---
+
+## 🔒 Server features
+
+- Lightweight media transfer system  
+- Player upload cooldown  
+- Media moderation tools  
+- Fully configurable  
 
 ---
 
 ## ⚙️ Server config
 
-`config/chatimage-server.json`:
-
 | Option | Default | Description |
 |--------|---------|-------------|
-| `resolution` | `720` | Max image resolution: `480`, `720`, `HD`, `2K` |
-| `imagePort` | `5050` | TCP port for image transfers (open in firewall!) |
-| `autoDownload` | `false` | Auto-download full image when received |
-| `photoCooldownSeconds` | `5` | Cooldown between photo sends per player |
+| `resolution` | `720` | Max media resolution (480 / 720 / HD / 2K) |
+| `imagePort` | `5050` | TCP transfer port |
+| `autoDownload` | `false` | Auto-download full media when received |
+| `photoCooldownSeconds` | `5` | Cooldown between uploads per player |
 
 ---
 
@@ -69,34 +92,29 @@ Then add an optional caption and press **Enter** or click **✔**
 
 | Command | Description |
 |---------|-------------|
-| `/chatimage ban <player>` | Prevent a player from sending photos |
-| `/chatimage unban <player>` | Restore photo sending for a player |
-| `/chatimage delete <imageId>` | Delete a photo from all clients |
+| `/chatmedia ban <player>` | Block media sending |
+| `/chatmedia unban <player>` | Restore media sending |
+| `/chatmedia delete <mediaId>` | Delete media globally |
 
-> Right-click on a photo in chat to copy its ID for deletion.
-
----
-
-## 📋 Requirements
-
-- Minecraft **1.21.1**
-- [Fabric Loader](https://fabricmc.net/use/) **0.18.6+**
-- [Fabric API](https://modrinth.com/mod/fabric-api)
-- [Kotlin for Fabric](https://modrinth.com/mod/fabric-language-kotlin)
+> Right-click media → copy ID for deletion.
 
 ---
 
-## 🗺 Roadmap
+## 📅 Plans
 
-Currently available for **Fabric 1.21.1** only. More platforms are coming:
+Chat Media is actively maintained and expanding across Minecraft versions and platforms.
+
+### 📦 Current
+- Fabric 1.21.11 ✔
+
+### 🔜 Coming next
 
 | Platform | Status |
 |----------|--------|
-| Fabric 1.21.11 | ✅ Available now |
-| Fabric 26.1 | 🔜 Next |
+| Fabric 26.x | 🔜 In progress |
+| Fabric 1.1x-1.2x | 🔜 In progress |
 | Forge / NeoForge | 📅 Planned |
 | Quilt | 📅 Planned |
-| **Paper plugin** | ⚡ Planned  |
-| Other plugin platforms (Purpur, Spigot) | 📅 Planned |
-
-> The Paper plugin will be a **server-only** jar — no mod loader required on the server side. Players still use the Fabric client mod.
+| Paper (server plugin) | ⚡ Planned |
+| Spigot / Purpur | 📅 Planned |
+| **Video support** | 🚧 Planned |
